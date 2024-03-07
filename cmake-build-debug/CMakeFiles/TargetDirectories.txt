@@ -1,0 +1,4 @@
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/Doxygen.dir
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/DA2324_PRJ1_G07_3.dir
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
