@@ -27,4 +27,8 @@ endif(DOXYGEN_FOUND)
 
 add_executable(DA2324_PRJ1_G07_3 code/main.cpp
         code/main.cpp
+        code/DataReader.cpp
+        code/DataReader.h
+        code/WaterNetwork.cpp
+        code/WaterNetwork.h
 )
