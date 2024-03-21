@@ -1,5 +1,15 @@
 #include <iostream>
 #include "WaterNetwork.h"
+
+bool dealWithMissingData(WaterNetwork* wn){
+    if(wn->getNodes().empty()){
+        std::cout << "Please load data to be parsed first (option a)" << std::endl;
+        return true;
+    }
+
+    return false;
+}
+
 int main() {
 
     WaterNetwork waterNetwork;
@@ -23,11 +33,51 @@ int main() {
         std::cout << "\nOption: ";
         std::cin >> option;
         while(option < 'a' || option > 'h'){
+            std::cout << "Please enter a valid option." << std::endl;
             std::cout << "\nOption: ";
             std::cin >> option;
         }
 
         switch(option){
+            case 'a':{
+                break;
+            }
+            case 'b':{
+                if(dealWithMissingData(&waterNetwork)){
+                    break;
+                }
+                break;
+            }
+            case 'c':{
+                if(dealWithMissingData(&waterNetwork)){
+                    break;
+                }
+                break;
+            }
+            case 'd':{
+                if(dealWithMissingData(&waterNetwork)){
+                    break;
+                }
+                break;
+            }
+            case 'e':{
+                if(dealWithMissingData(&waterNetwork)){
+                    break;
+                }
+                break;
+            }
+            case 'f':{
+                if(dealWithMissingData(&waterNetwork)){
+                    break;
+                }
+                break;
+            }
+            case 'g':{
+                if(dealWithMissingData(&waterNetwork)){
+                    break;
+                }
+                break;
+            }
             case 'h':{
                 return 0;
             }

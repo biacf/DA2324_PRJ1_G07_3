@@ -43,6 +43,8 @@ public:
 class WaterNetwork {
 private:
     std::vector<Node*> nodes;
+public:
+    std::vector<Node*> getNodes(){return nodes;};
 };
 
 
