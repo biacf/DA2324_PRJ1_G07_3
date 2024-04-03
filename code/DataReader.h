@@ -54,17 +54,21 @@ struct Pipe {
 
 class DataReader {
 public:
+    void loadData();
     vector<string> splitString(const string& s, char delimiter);
     void loadReservoirs(const string& reservoirFile);
     void loadStations(const string& stationFile);
     void loadCities(const string& citiesFile);
     void loadPipes(const string& pipesFile);
-
+    const unordered_map<string, Reservoir>& getReservoirsMap() const;
+    const unordered_map<string, Station>& getStationsMap() const;
+    const unordered_map<string, City>& getCitiesMap() const;
+    const Graph<Node>& getPipesGraph() const;
 
 private:
     Graph<Node> PipesGraph;
-    unordered_map<string, Reservoir> reservoirMap;
-    unordered_map<string, Station> stationMap;
+    unordered_map<string, Reservoir> reservoirsMap;
+    unordered_map<string, Station> stationsMap;
     unordered_map<string, City> citiesMap;
 };
 

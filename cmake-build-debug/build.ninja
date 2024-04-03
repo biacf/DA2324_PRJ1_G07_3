@@ -67,6 +67,12 @@ build CMakeFiles/DA2324_PRJ1_G07_3.dir/code/DataReader.cpp.obj: CXX_COMPILER__DA
   OBJECT_DIR = CMakeFiles\DA2324_PRJ1_G07_3.dir
   OBJECT_FILE_DIR = CMakeFiles\DA2324_PRJ1_G07_3.dir\code
 
+build CMakeFiles/DA2324_PRJ1_G07_3.dir/code/WaterNetwork.cpp.obj: CXX_COMPILER__DA2324_PRJ1_G07_3_unscanned_Debug C$:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2$ ano/DA/DA2324_PRJ1_G07_3/code/WaterNetwork.cpp || cmake_object_order_depends_target_DA2324_PRJ1_G07_3
+  DEP_FILE = CMakeFiles\DA2324_PRJ1_G07_3.dir\code\WaterNetwork.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\DA2324_PRJ1_G07_3.dir
+  OBJECT_FILE_DIR = CMakeFiles\DA2324_PRJ1_G07_3.dir\code
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DA2324_PRJ1_G07_3
@@ -75,7 +81,7 @@ build CMakeFiles/DA2324_PRJ1_G07_3.dir/code/DataReader.cpp.obj: CXX_COMPILER__DA
 #############################################
 # Link the executable DA2324_PRJ1_G07_3.exe
 
-build DA2324_PRJ1_G07_3.exe: CXX_EXECUTABLE_LINKER__DA2324_PRJ1_G07_3_Debug CMakeFiles/DA2324_PRJ1_G07_3.dir/code/main.cpp.obj CMakeFiles/DA2324_PRJ1_G07_3.dir/code/DataReader.cpp.obj
+build DA2324_PRJ1_G07_3.exe: CXX_EXECUTABLE_LINKER__DA2324_PRJ1_G07_3_Debug CMakeFiles/DA2324_PRJ1_G07_3.dir/code/main.cpp.obj CMakeFiles/DA2324_PRJ1_G07_3.dir/code/DataReader.cpp.obj CMakeFiles/DA2324_PRJ1_G07_3.dir/code/WaterNetwork.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DA2324_PRJ1_G07_3.dir

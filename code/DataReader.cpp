@@ -30,7 +30,7 @@ void DataReader::loadReservoirs(const string& reservoirFile) {
 
             Reservoir reservoir{name, municipality, id, code, maxDelivery};
 
-            reservoirMap[code] = reservoir;
+            reservoirsMap[code] = reservoir;
         }
     }
     file.close();
@@ -52,7 +52,7 @@ void DataReader::loadStations(const std::string &stationFile) {
 
             Station station{id, code};
 
-            stationMap[code] = station;
+            stationsMap[code] = station;
         }
     }
     file.close();
@@ -136,4 +136,28 @@ void DataReader::loadPipes(const std::string &pipesFile) {
         }
     }
     file.close();
+}
+
+const unordered_map<string, Reservoir>& DataReader::getReservoirsMap() const {
+    return reservoirsMap;
+}
+
+const unordered_map<string, Station>& DataReader::getStationsMap() const {
+    return stationsMap;
+}
+
+const unordered_map<string, City>& DataReader::getCitiesMap() const {
+    return citiesMap;
+}
+
+const Graph<Node>& DataReader::getPipesGraph() const {
+    return PipesGraph;
+}
+
+
+void DataReader::loadData() {
+    loadReservoirs("../Project1LargeDataSet/Reservoir.csv");
+    loadStations("../Project1LargeDataSet/Stations.csv");
+    loadCities("../Project1LargeDataSet/Cities.csv");
+    loadPipes("../Project1LargeDataSet/Cities.csv");
 }
