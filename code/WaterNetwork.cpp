@@ -3,3 +3,11 @@
 //
 
 #include "WaterNetwork.h"
+
+WaterNetwork::WaterNetwork() {
+    initializeData();
+}
+
+void WaterNetwork::initializeData(){
+    dataReader.loadData();
+}
