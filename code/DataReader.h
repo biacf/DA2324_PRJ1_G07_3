@@ -60,10 +60,10 @@ public:
     void loadStations(const string& stationFile);
     void loadCities(const string& citiesFile);
     void loadPipes(const string& pipesFile);
-    const unordered_map<string, Reservoir>& getReservoirsMap() const;
-    const unordered_map<string, Station>& getStationsMap() const;
-    const unordered_map<string, City>& getCitiesMap() const;
-    const Graph<Node>& getPipesGraph() const;
+    const unordered_map<string, Reservoir>* getReservoirsMap() const;
+    const unordered_map<string, Station>* getStationsMap() const;
+    const unordered_map<string, City>* getCitiesMap() const;
+    const Graph<Node>* getPipesGraph() const;
 
 private:
     Graph<Node> PipesGraph;
