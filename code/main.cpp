@@ -12,10 +12,9 @@
 //}
 
 int main() {
-
-    DataReader dataReader;
-    dataReader.loadReservoirs("../Project1LargeDataSet/Reservoir.csv");
-    dataReader.loadPipes("../Project1LargeDataSet/Pipes.csv");
+    WaterNetwork waterNetwork;
+    WaterNetwork();
+//    waterNetwork.calculateMaxFlow();
 
 //    std::cout << "##################################################" << std::endl;
 //    std::cout << "Welcome to the L.EIC Water Supply Management Tool!" << std::endl;

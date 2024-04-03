@@ -14,11 +14,14 @@
 class WaterNetwork {
 public:
     WaterNetwork();
+    unordered_map<string, int> calculateMaxFlow();
+    double bfsMaxFlow(Graph<Node>& graph, Vertex<Node>* source, Vertex<Node>* sink, unordered_map<string, int>& maxFlow);
+    unordered_map<string, int> edmondsKarpMaxFlow(Graph<Node>& graph, const vector<Node>& sources, const vector<Node>& sinks, const unordered_map<string, Station>& stationsMap);
 
 
 private:
     void initializeData();
-    DataReader dataReader;
+    DataReader dataReader; 
 };
 
 
