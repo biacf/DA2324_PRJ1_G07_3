@@ -7,10 +7,18 @@
 
 #include <string>
 #include <vector>
+#include "DataReader.h"
 
 
 
 class WaterNetwork {
+public:
+    WaterNetwork();
+
+
+private:
+    void initializeData();
+    DataReader dataReader;
 };
 
 
