@@ -1290,50 +1290,6 @@
 			"value" : "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3"
 		},
 		{
-			"name" : "DOXYGEN_DOT_EXECUTABLE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Dot tool for use with Doxygen"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "DOXYGEN_DOT_EXECUTABLE-NOTFOUND"
-		},
-		{
-			"name" : "DOXYGEN_EXECUTABLE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Doxygen documentation generation tool (https://www.doxygen.nl)"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Program Files/doxygen/bin/doxygen.exe"
-		},
-		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Doxygen",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding Doxygen"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[C:/Program Files/doxygen/bin/doxygen.exe][cfound components: doxygen missing components: dot][v1.9.8()]"
-		},
-		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
 			"properties" : 
 			[
