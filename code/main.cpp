@@ -3,18 +3,16 @@
 
 
 int main() {
-<<<<<<< HEAD
+
     char option;
     WaterNetwork waterNetwork;
+    unordered_map<string, int> mflow;
 
     std::cout << "##################################################" << std::endl;
     std::cout << "Welcome to the L.EIC Water Supply Management Tool!" << std::endl;
     std::cout << "##################################################" << std::endl;
-=======
-    WaterNetwork waterNetwork;
-    WaterNetwork();
-    waterNetwork.calculateMaxFlow();
->>>>>>> e055835c475e0333c2ef66c560040c9d87b3489f
+
+//    mflow = waterNetwork.calculateMaxFlow();
 
     while(true){
         std::cout << "\nWhat would you like to simulate today?" << std::endl;
@@ -42,8 +40,7 @@ int main() {
                 break;
             }
             case 'c':{
-                waterNetwork.removeWaterReservoir();
-
+                waterNetwork.removeWaterReservoir(mflow);
                 break;
             }
             case 'd':{

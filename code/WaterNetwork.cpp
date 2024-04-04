@@ -12,36 +12,81 @@ void WaterNetwork::initializeData(){
     dataReader.loadData();
 }
 
-<<<<<<< HEAD
-void WaterNetwork::removeWaterReservoir() {
+
+void WaterNetwork::removeWaterReservoir(unordered_map<string, int> mflow) {
     std::string wr_code;
+    Graph<Node> copy = *dataReader.getPipesGraph();
     std::vector<std::string> removed_reservoirs;
+    bool breaking = true;
 
-    while(true){
-        std::cout << "Select Water Reservoir: ";
-        std::cin >> wr_code;
-        std::cout << std::endl;
+    while(breaking){
+        bool found = false;
+        while(true){
+            std::cout << "Select Water Reservoir: ";
+            std::cin >> wr_code;
+            std::cout << std::endl;
 
-        if(getDataReader()->getReservoirsMap()->find(wr_code) == getDataReader()->getReservoirsMap()->end()){
-            std::cout << "Invalid Water Reservoir code" << std::endl;
+            for(const auto& w: removed_reservoirs){
+                if(w == wr_code){
+                    std::cout << "Reservoir already removed!" << std::endl;
+                    found = true;
+                }
+            }
+
+            if(!found){
+                if(getDataReader()->getReservoirsMap()->find(wr_code) == getDataReader()->getReservoirsMap()->end()){
+                    std::cout << "Invalid Water Reservoir code" << std::endl;
+                    found = true;
+                }
+                else{
+                    Node node;
+                    node.code = wr_code;
+                    node.type = reservoir;
+                    std::cout << "We out here!" << std::endl;
+                    if(copy.removeVertex(node)){
+                        removed_reservoirs.push_back(wr_code);
+                        std::cout << "Node was pushed back!" << std::endl;
+                    }
+                }
+            }
+            break;
         }
-        break;
+        if(!found){
+            int demand;
+            std::vector<string> aff_cities;
+            unordered_map<string, int> updated = calculateMaxFlow(); //mudar quando novo maxflow
+
+            for(const auto& c:updated){
+                demand = dataReader.getCitiesMap()->find(c.first)->second.demand;
+                if(c.second < demand){
+                    aff_cities.push_back(dataReader.getCitiesMap()->find(c.first)->second.name);
+                }
+            }
+
+            if(aff_cities.empty()){
+                std::cout << "No cities were affected by the removal of " << wr_code << std::endl;
+            }
+            else{
+                std::cout << "Affected cities: " << std::endl;
+                for(auto c: aff_cities){
+                    std::cout << c << std::endl;
+                }
+            }
+        }
+        int option;
+        std::cout << "Do you want to remove more reservoirs?(0/1) ";
+        std::cin >> option;
+        if(!option){
+            breaking = false;
+        }
+
     }
 
 
 
-    //criar clone de grafo, tirar wr, query se quer mais e tirar do  clone e ir listando as affected cities
-
-
-    //calculate flow
-    //use edmonds karp
-    //remove
-    //compare new flow to og flow
-    //have to recalculate with edmonds karp
-
 }
 
-=======
+
 unordered_map<string, int> WaterNetwork::calculateMaxFlow() {
     unordered_map<string, int> maxFlows;
 
@@ -56,15 +101,15 @@ unordered_map<string, int> WaterNetwork::calculateMaxFlow() {
     // Convert sources and sinks to vectors
     vector<Node> sources;
     vector<Node> sinks;
-    for (const auto& reservoirEntry : reservoirsMap) {
+    for (const auto& reservoirEntry : *reservoirsMap) {
         sources.push_back(Node{node_type::reservoir, reservoirEntry.second.code});
     }
-    for (const auto& cityEntry : citiesMap) {
+    for (const auto& cityEntry : *citiesMap) {
         sinks.push_back(Node{node_type::city, cityEntry.second.code});
     }
 
     // Calculate max flow using Edmonds-Karp algorithm
-    unordered_map<string, int> maxFlow = edmondsKarpMaxFlow(pipesGraph, sources, sinks, stationsMap);
+    unordered_map<string, int> maxFlow = edmondsKarpMaxFlow((Graph<Node> &) pipesGraph, sources, sinks, *stationsMap);
 
     return maxFlow;
 }
@@ -127,11 +172,11 @@ unordered_map<string, int> WaterNetwork::edmondsKarpMaxFlow(Graph<Node>& graph, 
         for (const auto& sink : sinks) {
             Vertex<Node>* sinkVertex = graph.findVertex(sink);
             // Compute max flow from source to sink using BFS
-            int flow = bfsMaxFlow(graph, sourceVertex, sinkVertex, stationsMap);
+            int flow = bfsMaxFlow(graph, sourceVertex, sinkVertex, (unordered_map<std::string, int> &) stationsMap);
             // Update max flow for the sink city
             maxFlow[sink.code] += flow;
         }
     }
     return maxFlow;
 }
->>>>>>> e055835c475e0333c2ef66c560040c9d87b3489f
+
