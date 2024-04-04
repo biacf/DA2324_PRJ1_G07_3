@@ -38,7 +38,7 @@ public:
     void setIndegree(unsigned int indegree);
     void setDist(double dist);
     void setPath(Edge<T> *path);
-    Edge<T> * addEdge(Vertex<T> *dest, double w, int capacity);
+    Edge<T> * addEdge(Vertex<T> *dest, double c, int direction);
     bool removeEdge(T in);
     void removeOutgoingEdges();
 
@@ -66,11 +66,11 @@ protected:
 template <class T>
 class Edge {
 public:
-    Edge(Vertex<T> *orig, Vertex<T> *dest, double w, int capacity);
+    Edge(Vertex<T> *orig, Vertex<T> *dest, double c, int direction);
 
     Vertex<T> * getDest() const;
-    double getWeight() const;
-    int getCapacity() const;
+    double getCapacity() const;
+    int getDirection() const;
     bool isSelected() const;
     Vertex<T> * getOrig() const;
     Edge<T> *getReverse() const;
@@ -81,8 +81,8 @@ public:
     void setFlow(double flow);
 protected:
     Vertex<T> * dest; // destination vertex
-    double weight; // edge weight, can also be used for capacity
-    int capacity;
+    double capacity; // edge weight, can also be used for direction
+    int direction;
     // auxiliary fields
     bool selected = false;
 
@@ -115,9 +115,9 @@ public:
      * destination vertices and the edge weight (w).
      * Returns true if successful, and false if the source or destination vertex does not exist.
      */
-    bool addEdge(const T &sourc, const T &dest, double w, int capacity);
+    bool addEdge(const T &sourc, const T &dest, double c, int direction);
     bool removeEdge(const T &source, const T &dest);
-    bool addBidirectionalEdge(const T &sourc, const T &dest, double w);
+    bool addBidirectionalEdge(const T &sourc, const T &dest, double c, int direction);
 
     int getNumVertex() const;
     std::vector<Vertex<T> *> getVertexSet() const;
@@ -155,8 +155,8 @@ Vertex<T>::Vertex(T in): info(in) {}
  * with a given destination vertex (d) and edge weight (w).
  */
 template <class T>
-Edge<T> * Vertex<T>::addEdge(Vertex<T> *d, double w, int capacity) {
-    auto newEdge = new Edge<T>(this, d, w, capacity);
+Edge<T> * Vertex<T>::addEdge(Vertex<T> *d, double c, int direction) {
+    auto newEdge = new Edge<T>(this, d, c, direction);
     adj.push_back(newEdge);
     d->incoming.push_back(newEdge);
     return newEdge;
@@ -293,7 +293,7 @@ void Vertex<T>::deleteEdge(Edge<T> *edge) {
 /********************** Edge  ****************************/
 
 template <class T>
-Edge<T>::Edge(Vertex<T> *orig, Vertex<T> *dest, double w, int capacity): orig(orig), dest(dest), weight(w), capacity(capacity) {}
+Edge<T>::Edge(Vertex<T> *orig, Vertex<T> *dest, double c, int direction): orig(orig), dest(dest), capacity(c), direction(direction) {}
 
 template <class T>
 Vertex<T> * Edge<T>::getDest() const {
@@ -301,13 +301,13 @@ Vertex<T> * Edge<T>::getDest() const {
 }
 
 template <class T>
-double Edge<T>::getWeight() const {
-    return this->weight;
+double Edge<T>::getCapacity() const {
+    return this->capacity;
 }
 
 template <class T>
-int Edge<T>::getCapacity() const {
-    return this->capacity;
+int Edge<T>::getDirection() const {
+    return this->direction;
 }
 
 template <class T>
@@ -418,12 +418,12 @@ bool Graph<T>::removeVertex(const T &in) {
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
 template <class T>
-bool Graph<T>::addEdge(const T &sourc, const T &dest, double w, int capacity) {
+bool Graph<T>::addEdge(const T &sourc, const T &dest, double c, int direction) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == nullptr || v2 == nullptr)
         return false;
-    v1->addEdge(v2, w, capacity);
+    v1->addEdge(v2, c, direction);
     return true;
 }
 
@@ -442,13 +442,13 @@ bool Graph<T>::removeEdge(const T &sourc, const T &dest) {
 }
 
 template <class T>
-bool Graph<T>::addBidirectionalEdge(const T &sourc, const T &dest, double w) {
+bool Graph<T>::addBidirectionalEdge(const T &sourc, const T &dest, double c, int direction) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == nullptr || v2 == nullptr)
         return false;
-    auto e1 = v1->addEdge(v2, w);
-    auto e2 = v2->addEdge(v1, w);
+    auto e1 = v1->addEdge(v2, c, direction);
+    auto e2 = v2->addEdge(v1, c, direction);
     e1->setReverse(e2);
     e2->setReverse(e1);
     return true;

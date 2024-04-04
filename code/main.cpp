@@ -3,12 +3,18 @@
 
 
 int main() {
+<<<<<<< HEAD
     char option;
     WaterNetwork waterNetwork;
 
     std::cout << "##################################################" << std::endl;
     std::cout << "Welcome to the L.EIC Water Supply Management Tool!" << std::endl;
     std::cout << "##################################################" << std::endl;
+=======
+    WaterNetwork waterNetwork;
+    WaterNetwork();
+    waterNetwork.calculateMaxFlow();
+>>>>>>> e055835c475e0333c2ef66c560040c9d87b3489f
 
     while(true){
         std::cout << "\nWhat would you like to simulate today?" << std::endl;
