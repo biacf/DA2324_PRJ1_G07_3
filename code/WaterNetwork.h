@@ -14,7 +14,8 @@
 class WaterNetwork {
 public:
     WaterNetwork();
-
+    void  removeWaterReservoir();
+    DataReader* getDataReader(){return &dataReader;};
 
 private:
     void initializeData();

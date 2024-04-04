@@ -138,26 +138,26 @@ void DataReader::loadPipes(const std::string &pipesFile) {
     file.close();
 }
 
-const unordered_map<string, Reservoir>& DataReader::getReservoirsMap() const {
-    return reservoirsMap;
+const unordered_map<string, Reservoir>* DataReader::getReservoirsMap() const {
+    return &reservoirsMap;
 }
 
-const unordered_map<string, Station>& DataReader::getStationsMap() const {
-    return stationsMap;
+const unordered_map<string, Station>* DataReader::getStationsMap() const {
+    return &stationsMap;
 }
 
-const unordered_map<string, City>& DataReader::getCitiesMap() const {
-    return citiesMap;
+const unordered_map<string, City>* DataReader::getCitiesMap() const {
+    return &citiesMap;
 }
 
-const Graph<Node>& DataReader::getPipesGraph() const {
-    return PipesGraph;
+const Graph<Node>* DataReader::getPipesGraph() const {
+    return &PipesGraph;
 }
 
 
 void DataReader::loadData() {
-    loadReservoirs("../Project1LargeDataSet/Reservoir.csv");
-    loadStations("../Project1LargeDataSet/Stations.csv");
-    loadCities("../Project1LargeDataSet/Cities.csv");
-    loadPipes("../Project1LargeDataSet/Cities.csv");
+    loadReservoirs("../Project1DataSetSmall/Reservoirs_Madeira.csv");
+    loadStations("../Project1DataSetSmall/Stations_Madeira.csv");
+    loadCities("../Project1DataSetSmall/Cities_Madeira.csv");
+    loadPipes("../Project1DataSetSmall/Pipes_Madeira.csv");
 }

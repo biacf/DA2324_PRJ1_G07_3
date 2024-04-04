@@ -1,13 +1,10 @@
 #include <iostream>
-#include "DataReader.h"
+#include "WaterNetwork.h"
 
 
 int main() {
     char option;
-
-    DataReader dataReader;
-    dataReader.loadReservoirs("../Project1LargeDataSet/Reservoir.csv");
-    dataReader.loadPipes("../Project1LargeDataSet/Pipes.csv");
+    WaterNetwork waterNetwork;
 
     std::cout << "##################################################" << std::endl;
     std::cout << "Welcome to the L.EIC Water Supply Management Tool!" << std::endl;
@@ -15,18 +12,17 @@ int main() {
 
     while(true){
         std::cout << "\nWhat would you like to simulate today?" << std::endl;
-        std::cout << "\na. Load data to be parsed" << std::endl;
-        std::cout << "b. Check Maximum Flow options" << std::endl;
-        std::cout << "c. Check under supplied cities" << std::endl;
-        std::cout << "d. Remove Water Reservoirs" << std::endl;
-        std::cout << "e. Remove Pumping Stations" << std::endl;
-        std::cout << "f. Vital Pipelines" << std::endl;
-        std::cout << "g. Remove pipelines" << std::endl;
-        std::cout << "h. Exit" << std::endl;
+        std::cout << "a. Check Maximum Flow options" << std::endl;
+        std::cout << "b. Check under supplied cities" << std::endl;
+        std::cout << "c. Remove Water Reservoirs" << std::endl;
+        std::cout << "d. Remove Pumping Stations" << std::endl;
+        std::cout << "e. Vital Pipelines" << std::endl;
+        std::cout << "f. Remove pipelines" << std::endl;
+        std::cout << "g. Exit" << std::endl;
 
         std::cout << "\nOption: ";
         std::cin >> option;
-        while(option < 'a' || option > 'h'){
+        while(option < 'a' || option > 'g'){
             std::cout << "Please enter a valid option." << std::endl;
             std::cout << "\nOption: ";
             std::cin >> option;
@@ -40,6 +36,8 @@ int main() {
                 break;
             }
             case 'c':{
+                waterNetwork.removeWaterReservoir();
+
                 break;
             }
             case 'd':{
@@ -52,9 +50,6 @@ int main() {
                 break;
             }
             case 'g':{
-                break;
-            }
-            case 'h':{
                 return 0;
             }
             default:{
