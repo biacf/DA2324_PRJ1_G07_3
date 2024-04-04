@@ -99,18 +99,18 @@ template <class T>
 class Graph {
 public:
     ~Graph();
-    /*
+    /**
     * Auxiliary function to find a vertex with a given the content.
     */
     Vertex<T> *findVertex(const T &in) const;
-    /*
+    /**
      *  Adds a vertex with a given content or info (in) to a graph (this).
      *  Returns true if successful, and false if a vertex with that content already exists.
      */
     bool addVertex(const T &in);
     bool removeVertex(const T &in);
 
-    /*
+    /**
      * Adds an edge to a graph (this), given the contents of the source and
      * destination vertices and the edge weight (w).
      * Returns true if successful, and false if the source or destination vertex does not exist.
@@ -150,7 +150,7 @@ void deleteMatrix(double **m, int n);
 
 template <class T>
 Vertex<T>::Vertex(T in): info(in) {}
-/*
+/**
  * Auxiliary function to add an outgoing edge to a vertex (this),
  * with a given destination vertex (d) and edge weight (w).
  */
@@ -162,7 +162,7 @@ Edge<T> * Vertex<T>::addEdge(Vertex<T> *d, double c, int direction) {
     return newEdge;
 }
 
-/*
+/**
  * Auxiliary function to remove an outgoing edge (with a given destination (d))
  * from a vertex (this).
  * Returns true if successful, and false if such edge does not exist.
@@ -186,7 +186,7 @@ bool Vertex<T>::removeEdge(T in) {
     return removedEdge;
 }
 
-/*
+/**
  * Auxiliary function to remove an outgoing edge of a vertex.
  */
 template <class T>

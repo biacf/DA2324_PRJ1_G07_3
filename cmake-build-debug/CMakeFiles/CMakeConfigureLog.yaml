@@ -61,8 +61,13 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
+<<<<<<< HEAD
       source: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rb2q6y"
       binary: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rb2q6y"
+=======
+      source: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-zu7nbw"
+      binary: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-zu7nbw"
+>>>>>>> Bia
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -71,9 +76,15 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
+<<<<<<< HEAD
         Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rb2q6y
         
         Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_21345 && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c
+=======
+        Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-zu7nbw
+        
+        Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_2b7ec && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c
+>>>>>>> Bia
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe
         Target: x86_64-w64-mingw32
@@ -81,8 +92,13 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 13.1.0 (GCC) 
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_21345.dir/'
          C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_21345.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -fdiagnostics-color=always -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccfCmlgf.s
+=======
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_2b7ec.dir/'
+         C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_2b7ec.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6VkSpp.s
+>>>>>>> Bia
         GNU C17 (GCC) version 13.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.2.0-p4, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -100,6 +116,7 @@ events:
          C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 2aa4fcf5c9208168c5e2d38a58fc2a97
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_21345.dir/'
          as -v -o CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccfCmlgf.s
         GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40
@@ -107,6 +124,15 @@ events:
         LIBRARY_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.'
         [2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe  -v CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj -o cmTC_21345.exe -Wl,--out-implib,libcmTC_21345.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+=======
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_2b7ec.dir/'
+         as -v -o CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6VkSpp.s
+        GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/
+        LIBRARY_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.'
+        [2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe  -v CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj -o cmTC_2b7ec.exe -Wl,--out-implib,libcmTC_2b7ec.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+>>>>>>> Bia
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe
         COLLECT_LTO_WRAPPER=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe
@@ -117,9 +143,15 @@ events:
         gcc version 13.1.0 (GCC) 
         COMPILER_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/
         LIBRARY_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_21345.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_21345.'
          C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_21345.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_21345.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_21345.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_21345.'
+=======
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b7ec.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_2b7ec.'
+         C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_2b7ec.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_2b7ec.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b7ec.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_2b7ec.'
+>>>>>>> Bia
         
       exitCode: 0
   -
@@ -153,9 +185,15 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+<<<<<<< HEAD
         ignore line: [Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rb2q6y]
         ignore line: []
         ignore line: [Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_21345 && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c]
+=======
+        ignore line: [Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-zu7nbw]
+        ignore line: []
+        ignore line: [Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_2b7ec && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c]
+>>>>>>> Bia
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -163,8 +201,13 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 13.1.0 (GCC) ]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_21345.dir/']
         ignore line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_21345.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -fdiagnostics-color=always -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccfCmlgf.s]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_2b7ec.dir/']
+        ignore line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_2b7ec.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6VkSpp.s]
+>>>>>>> Bia
         ignore line: [GNU C17 (GCC) version 13.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 13.1.0  GMP version 6.2.1  MPFR version 4.2.0-p4  MPC version 1.3.1  isl version none]
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -182,8 +225,13 @@ events:
         ignore line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 2aa4fcf5c9208168c5e2d38a58fc2a97]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_21345.dir/']
         ignore line: [ as -v -o CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccfCmlgf.s]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_2b7ec.dir/']
+        ignore line: [ as -v -o CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6VkSpp.s]
+>>>>>>> Bia
         ignore line: [GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40]
         ignore line: [COMPILER_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/]
@@ -193,8 +241,13 @@ events:
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.']
         ignore line: [[2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe  -v CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj -o cmTC_21345.exe -Wl --out-implib libcmTC_21345.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe  -v CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj -o cmTC_2b7ec.exe -Wl --out-implib libcmTC_2b7ec.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+>>>>>>> Bia
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\gcc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe]
@@ -211,14 +264,23 @@ events:
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_21345.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_21345.']
         link line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_21345.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_21345.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b7ec.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_2b7ec.']
+        link line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_2b7ec.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_2b7ec.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+>>>>>>> Bia
           arg [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
+<<<<<<< HEAD
           arg [cmTC_21345.exe] ==> ignore
+=======
+          arg [cmTC_2b7ec.exe] ==> ignore
+>>>>>>> Bia
           arg [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o] ==> obj [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o]
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0]
@@ -227,9 +289,15 @@ events:
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib]
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..]
+<<<<<<< HEAD
           arg [CMakeFiles/cmTC_21345.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [--out-implib] ==> ignore
           arg [libcmTC_21345.dll.a] ==> ignore
+=======
+          arg [CMakeFiles/cmTC_2b7ec.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_2b7ec.dll.a] ==> ignore
+>>>>>>> Bia
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -285,8 +353,13 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
+<<<<<<< HEAD
       source: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yx1ypd"
       binary: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yx1ypd"
+=======
+      source: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uvjdyo"
+      binary: "C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uvjdyo"
+>>>>>>> Bia
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -295,9 +368,15 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
+<<<<<<< HEAD
         Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yx1ypd
         
         Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_c9d2b && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
+=======
+        Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uvjdyo
+        
+        Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_297e9 && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe   -v -o CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
+>>>>>>> Bia
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe
         Target: x86_64-w64-mingw32
@@ -305,8 +384,13 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 13.1.0 (GCC) 
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9d2b.dir/'
          C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c9d2b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -fdiagnostics-color=always -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6A24QF.s
+=======
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_297e9.dir/'
+         C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_297e9.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccaiYPKM.s
+>>>>>>> Bia
         GNU C++17 (GCC) version 13.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.2.0-p4, MPC version 1.3.1, isl version none
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -330,6 +414,7 @@ events:
          C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: e75de627edc3c57e31324b930b15b056
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9d2b.dir/'
          as -v -o CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6A24QF.s
         GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40
@@ -337,6 +422,15 @@ events:
         LIBRARY_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
         COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.'
         [2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe  -v CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_c9d2b.exe -Wl,--out-implib,libcmTC_c9d2b.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+=======
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_297e9.dir/'
+         as -v -o CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccaiYPKM.s
+        GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/
+        LIBRARY_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe  -v CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_297e9.exe -Wl,--out-implib,libcmTC_297e9.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+>>>>>>> Bia
         Using built-in specs.
         COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe
         COLLECT_LTO_WRAPPER=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe
@@ -347,9 +441,15 @@ events:
         gcc version 13.1.0 (GCC) 
         COMPILER_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/
         LIBRARY_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+<<<<<<< HEAD
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c9d2b.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_c9d2b.'
          C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_c9d2b.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_c9d2b.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c9d2b.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_c9d2b.'
+=======
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_297e9.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_297e9.'
+         C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_297e9.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_297e9.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_297e9.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_297e9.'
+>>>>>>> Bia
         
       exitCode: 0
   -
@@ -389,9 +489,15 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+<<<<<<< HEAD
         ignore line: [Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-yx1ypd]
         ignore line: []
         ignore line: [Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_c9d2b && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
+=======
+        ignore line: [Change Dir: C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uvjdyo]
+        ignore line: []
+        ignore line: [Run Build Command(s):C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -v cmTC_297e9 && [1/2] C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe   -v -o CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj -c C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
+>>>>>>> Bia
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -399,8 +505,13 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 13.1.0 (GCC) ]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9d2b.dir/']
         ignore line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c9d2b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -fdiagnostics-color=always -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6A24QF.s]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_297e9.dir/']
+        ignore line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_297e9.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccaiYPKM.s]
+>>>>>>> Bia
         ignore line: [GNU C++17 (GCC) version 13.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 13.1.0  GMP version 6.2.1  MPFR version 4.2.0-p4  MPC version 1.3.1  isl version none]
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -424,8 +535,13 @@ events:
         ignore line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: e75de627edc3c57e31324b930b15b056]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9d2b.dir/']
         ignore line: [ as -v -o CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\cc6A24QF.s]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_297e9.dir/']
+        ignore line: [ as -v -o CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ANABEA~1\\AppData\\Local\\Temp\\ccaiYPKM.s]
+>>>>>>> Bia
         ignore line: [GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40]
         ignore line: [COMPILER_PATH=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/]
@@ -435,8 +551,13 @@ events:
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.']
         ignore line: [[2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe  -v CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_c9d2b.exe -Wl --out-implib libcmTC_c9d2b.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] cmd.exe /C "cd . && C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe  -v CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_297e9.exe -Wl --out-implib libcmTC_297e9.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+>>>>>>> Bia
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Users\\AnaBeatrizCarneiroFe\\AppData\\Local\\Programs\\CLion\\bin\\mingw\\bin\\g++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe]
@@ -453,14 +574,23 @@ events:
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+<<<<<<< HEAD
         ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c9d2b.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_c9d2b.']
         link line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_c9d2b.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_c9d2b.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+=======
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_297e9.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_297e9.']
+        link line: [ C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -m i386pep -Bdynamic -o cmTC_297e9.exe C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_297e9.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+>>>>>>> Bia
           arg [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
+<<<<<<< HEAD
           arg [cmTC_c9d2b.exe] ==> ignore
+=======
+          arg [cmTC_297e9.exe] ==> ignore
+>>>>>>> Bia
           arg [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o] ==> obj [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o]
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0]
@@ -469,9 +599,15 @@ events:
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib]
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LC:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..] ==> dir [C:/Users/AnaBeatrizCarneiroFe/AppData/Local/Programs/CLion/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..]
+<<<<<<< HEAD
           arg [CMakeFiles/cmTC_c9d2b.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [--out-implib] ==> ignore
           arg [libcmTC_c9d2b.dll.a] ==> ignore
+=======
+          arg [CMakeFiles/cmTC_297e9.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_297e9.dll.a] ==> ignore
+>>>>>>> Bia
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
