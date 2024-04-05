@@ -30,7 +30,7 @@ void WaterNetwork::removeWaterReservoir(unordered_map<string, int> mflow) {
             }
 
             if(!found){
-                if(getDataReader()->getReservoirsMap()->find(wr_code) == getDataReader()->getReservoirsMap()->end()){
+                if(dataReader.getReservoirsMap()->find(wr_code) == dataReader.getReservoirsMap()->end()){
                     std::cout << "Invalid Water Reservoir code" << std::endl;
                     found = true;
                 }

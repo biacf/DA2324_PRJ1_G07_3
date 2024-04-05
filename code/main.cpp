@@ -4,7 +4,6 @@
 
 
 int main() {
->>>>>>> 24f0e91ccfa9c4f853b915348d90514089f48a77
 
     char option;
     WaterNetwork waterNetwork;
@@ -14,7 +13,7 @@ int main() {
     std::cout << "Welcome to the L.EIC Water Supply Management Tool!" << std::endl;
     std::cout << "##################################################" << std::endl;
 
-//    mflow = waterNetwork.calculateMaxFlow();
+    mflow = waterNetwork.calculateMaxFlow();
 
     while(true){
         std::cout << "\nWhat would you like to simulate today?" << std::endl;

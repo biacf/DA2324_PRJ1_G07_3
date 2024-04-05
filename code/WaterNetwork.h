@@ -13,7 +13,6 @@ public:
 
     void removeWaterReservoir(unordered_map<string, int> mflow);
     void removePumpingStations(unordered_map<string, int> mflow);
-    DataReader* getDataReader(){return &dataReader;};
 
     unordered_map<string, int> calculateMaxFlow();
     double bfsMaxFlow(Graph<Node>& graph, Vertex<Node>* source, Vertex<Node>* sink, unordered_map<string, int>& maxFlow);
