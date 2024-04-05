@@ -11,9 +11,14 @@
 //    return false;
 //}
 
-int main() {
-    WaterNetwork waterNetwork;
-    WaterNetwork();
+    int main() {
+        WaterNetwork waterNetwork;
+        waterNetwork.dataReader.loadData();
+//    const Graph<Node>* pipesGraph = waterNetwork.dataReader.getPipesGraph();
+//    unordered_map<string, int> maxFlow = waterNetwork.calculateMaxFlow(*pipesGraph);
+
+
+
 //    waterNetwork.calculateMaxFlow();
 
 //    std::cout << "##################################################" << std::endl;

@@ -12,11 +12,8 @@ void WaterNetwork::initializeData(){
     dataReader.loadData();
 }
 
-//unordered_map<string, int> WaterNetwork::calculateMaxFlow() {
+//unordered_map<string, int> WaterNetwork::calculateMaxFlow(const Graph<Node>& pipesGraph) {
 //    unordered_map<string, int> maxFlows;
-//
-//    // Get the graph representing the water network
-//    const Graph<Node>* pipesGraph = dataReader.getPipesGraph();
 //
 //    // Retrieve reservoirs, cities, and stations maps
 //    const unordered_map<string, Reservoir>* reservoirsMap = dataReader.getReservoirsMap();
@@ -26,25 +23,25 @@ void WaterNetwork::initializeData(){
 //    // Convert sources and sinks to vectors
 //    vector<Node> sources;
 //    vector<Node> sinks;
-//    for (const auto& reservoirEntry : reservoirsMap) {
+//    for (const auto& reservoirEntry : *reservoirsMap) {
 //        sources.push_back(Node{node_type::reservoir, reservoirEntry.second.code});
 //    }
-//    for (const auto& cityEntry : citiesMap) {
+//    for (const auto& cityEntry : *citiesMap) {
 //        sinks.push_back(Node{node_type::city, cityEntry.second.code});
 //    }
 //
 //    // Calculate max flow using Edmonds-Karp algorithm
-//    unordered_map<string, int> maxFlow = edmondsKarpMaxFlow(pipesGraph, sources, sinks, stationsMap);
+//    unordered_map<string, int> maxFlow = edmondsKarpMaxFlow(pipesGraph, sources, sinks, *stationsMap);
 //
 //    return maxFlow;
 //}
 //
-//double WaterNetwork::bfsMaxFlow(Graph<Node>& graph, Vertex<Node>* source, Vertex<Node>* sink, unordered_map<string, int>& maxFlow) {
+//double WaterNetwork::bfsMaxFlow(const Graph<Node>& graph, Vertex<Node>* source, Vertex<Node>* sink, unordered_map<string, int>& maxFlow) {
 //    std::unordered_map<Vertex<Node>*, double> flow; // Stores flow through each edge
 //    std::unordered_map<Vertex<Node>*, Edge<Node>*> parent; // Stores parent edge for each vertex
 //    for (auto v : graph.getVertexSet()) {
 //        for (auto e : v->getAdj()) {
-//            flow[e->getDest()] = 0;
+//            flow[(*e).getDest()] = 0;
 //        }
 //    }
 //
@@ -57,7 +54,7 @@ void WaterNetwork::initializeData(){
 //        auto u = q.front();
 //        q.pop();
 //        for (auto e : u->getAdj()) {
-//            auto v = e->getDest();
+//            auto v = (*e).getDest();
 //            if (flow[v] == 0 && e->getCapacity() > 0) {
 //                parent[v] = e;
 //                flow[v] = std::min(flow[u], static_cast<double>(e->getCapacity()));
@@ -82,7 +79,7 @@ void WaterNetwork::initializeData(){
 //    return 0; // No augmenting path found
 //}
 //
-//unordered_map<string, int> WaterNetwork::edmondsKarpMaxFlow(Graph<Node>& graph, const vector<Node>& sources, const vector<Node>& sinks, const unordered_map<string, Station>& stationsMap) {
+//unordered_map<string, int> WaterNetwork::edmondsKarpMaxFlow(const Graph<Node>& graph, const vector<Node>& sources, const vector<Node>& sinks, const unordered_map<string, Station>& stationsMap) {
 //    unordered_map<string, int> maxFlow; // Map to store max flow for each city
 //
 //    // Initialize max flow for each city
@@ -97,7 +94,7 @@ void WaterNetwork::initializeData(){
 //        for (const auto& sink : sinks) {
 //            Vertex<Node>* sinkVertex = graph.findVertex(sink);
 //            // Compute max flow from source to sink using BFS
-//            int flow = bfsMaxFlow(graph, sourceVertex, sinkVertex, stationsMap);
+//            int flow = bfsMaxFlow(graph, sourceVertex, sinkVertex, maxFlow);
 //            // Update max flow for the sink city
 //            maxFlow[sink.code] += flow;
 //        }

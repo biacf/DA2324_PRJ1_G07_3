@@ -125,14 +125,20 @@ void DataReader::loadPipes(const std::string &pipesFile) {
                 continue;
             }
 
-
-
             Node sourceNode{sourceType, source};
             Node targetNode{targetType, target};
 
             PipesGraph.addVertex(sourceNode);
             PipesGraph.addVertex(targetNode);
-            PipesGraph.addEdge(sourceNode, targetNode, capacity, direction);
+
+            if (direction == 1) {
+                PipesGraph.addEdge(sourceNode, targetNode, capacity, direction);
+            } else if (direction == 0) {
+                PipesGraph.addBidirectionalEdge(sourceNode, targetNode, capacity, direction);
+            } else {
+                cerr << "Error: Invalid direction value for edge from " << source << " to " << target << endl;
+                continue;
+            }
         }
     }
     file.close();

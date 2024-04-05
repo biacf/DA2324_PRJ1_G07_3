@@ -22,6 +22,12 @@ struct Node {
     bool operator==(const Node& other) const {
         return code == other.code;
     }
+
+    struct NodeHash {
+        std::size_t operator()(const Node& node) const {
+            return std::hash<std::string>()(node.code);
+        }
+    };
 };
 
 struct Reservoir {
