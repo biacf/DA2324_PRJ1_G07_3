@@ -1,0 +1,4 @@
+/home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/Doxygen.dir
+/home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/DA2324_PRJ1_G07_3.dir
+/home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/rebuild_cache.dir
