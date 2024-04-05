@@ -13,6 +13,9 @@ public:
 
     void removeWaterReservoir(unordered_map<string, int> mflow);
     void removePumpingStations(unordered_map<string, int> mflow);
+    void vitalPipelines();
+    void minCut(string c_code);
+    void minCutBFS(std::unordered_set<string>& visited, string source);
 
     unordered_map<string, int> calculateMaxFlow();
     double bfsMaxFlow(Graph<Node>& graph, Vertex<Node>* source, Vertex<Node>* sink, unordered_map<string, int>& maxFlow);

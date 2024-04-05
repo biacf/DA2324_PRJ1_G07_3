@@ -1,4 +1,5 @@
 #include <map>
+#include <unordered_set>
 #include "WaterNetwork.h"
 
 WaterNetwork::WaterNetwork() {
@@ -212,5 +213,69 @@ void WaterNetwork::removePumpingStations(unordered_map<string, int> mflow) {
         std::cout << st << std::endl;
     }
 
+}
+
+void WaterNetwork::vitalPipelines() {
+    string city_code;
+
+    while(true){
+        std::cout << "Insert valid city code: ";
+        std::cin >> city_code;
+        if(dataReader.getCitiesMap()->find(city_code) == dataReader.getCitiesMap()->end()){
+            std::cout << "Invalid city code!" << std::endl;
+        }
+        else{
+            break;
+        }
+    }
+
+    minCut(city_code);
+}
+
+void WaterNetwork::minCutBFS(unordered_set<string> &visited, string source) {
+    queue<string> q;
+    q.push(source);
+    visited.insert(source);
+    Node city_;
+    city_.type= city;
+
+    while(!q.empty()){
+        string current = q.front();
+        q.pop();
+        city_.code = current;
+        for(auto e : dataReader.getPipesGraph()->findVertex(city_)->getAdj()){
+            if(e->getCapacity() - e->getFlow() > 0 && visited.find(e->getDest()->getInfo().code) == visited.end()){
+                q.push(e->getDest()->getInfo().code);
+                visited.insert(e->getDest()->getInfo().code);
+            }
+        }
+    }
+}
+
+void WaterNetwork::minCut(string c_code) {
+    std::unordered_set<string> visited;
+    minCutBFS(visited, c_code);
+
+    Node sourcecity;
+    sourcecity.type = city;
+    sourcecity.code = c_code;
+
+    vector<Edge<Node>*> minCutEdges;
+    for(int i = 0; i < dataReader.getPipesGraph()->findVertex(sourcecity)->getAdj().size(); i++){
+        Edge<Node>* edge = dataReader.getPipesGraph()->findVertex(sourcecity)->getAdj()[i];
+        if(visited.find(edge->getDest()->getInfo().code) != visited.end()){
+            minCutEdges.push_back(edge);
+        }
+    }
+
+    if(minCutEdges.empty()){
+        std::cout << "No pipes would negatively affect " << dataReader.getCitiesMap()->find(c_code)->second.name << " flow if cut." << std::endl;
+    }
+    else{
+        std::cout << "The following pipes would negatively affect this cities flow if cut: " << std::endl;
+        for(auto e : minCutEdges){
+            std::cout << "Pipe that connects " << e->getOrig()->getInfo().code << " to " << e->getDest()->getInfo().code << std::endl;
+        }
+    }
 }
 

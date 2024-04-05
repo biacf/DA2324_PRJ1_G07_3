@@ -13,7 +13,7 @@ int main() {
     std::cout << "Welcome to the L.EIC Water Supply Management Tool!" << std::endl;
     std::cout << "##################################################" << std::endl;
 
-    mflow = waterNetwork.calculateMaxFlow();
+//    mflow = waterNetwork.calculateMaxFlow();
 
     while(true){
         std::cout << "\nWhat would you like to simulate today?" << std::endl;
@@ -49,6 +49,7 @@ int main() {
                 break;
             }
             case 'e':{
+                waterNetwork.vitalPipelines();
                 break;
             }
             case 'f':{
