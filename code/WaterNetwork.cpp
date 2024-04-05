@@ -9,7 +9,6 @@ void WaterNetwork::initializeData(){
     dataReader.loadData();
 }
 
-
 void WaterNetwork::removeWaterReservoir(unordered_map<string, int> mflow) {
     std::string wr_code;
     Graph<Node> copy = *dataReader.getPipesGraph();

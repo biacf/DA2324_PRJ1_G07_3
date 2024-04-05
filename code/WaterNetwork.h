@@ -21,7 +21,8 @@ public:
 
 private:
     void initializeData();
-    DataReader dataReader; 
+
+    DataReader dataReader;
 };
 
 

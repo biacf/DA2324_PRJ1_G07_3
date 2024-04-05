@@ -38,7 +38,7 @@ public:
     void setIndegree(unsigned int indegree);
     void setDist(double dist);
     void setPath(Edge<T> *path);
-    Edge<T> * addEdge(Vertex<T> *dest, double c, int direction);
+    Edge<T> * addEdge(Vertex<T> *dest, int c, int direction);
     bool removeEdge(T in);
     void removeOutgoingEdges();
 
@@ -115,9 +115,9 @@ public:
      * destination vertices and the edge weight (w).
      * Returns true if successful, and false if the source or destination vertex does not exist.
      */
-    bool addEdge(const T &sourc, const T &dest, double c, int direction);
+    bool addEdge(const T &sourc, const T &dest, int c, int d);
     bool removeEdge(const T &source, const T &dest);
-    bool addBidirectionalEdge(const T &sourc, const T &dest, double c, int direction);
+    bool addBidirectionalEdge(const T &sourc, const T &dest, double c, int d);
 
     int getNumVertex() const;
     std::vector<Vertex<T> *> getVertexSet() const;
@@ -155,7 +155,7 @@ Vertex<T>::Vertex(T in): info(in) {}
  * with a given destination vertex (d) and edge weight (w).
  */
 template <class T>
-Edge<T> * Vertex<T>::addEdge(Vertex<T> *d, double c, int direction) {
+Edge<T> * Vertex<T>::addEdge(Vertex<T> *d, int c, int direction) {
     auto newEdge = new Edge<T>(this, d, c, direction);
     adj.push_back(newEdge);
     d->incoming.push_back(newEdge);
@@ -418,12 +418,12 @@ bool Graph<T>::removeVertex(const T &in) {
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
 template <class T>
-bool Graph<T>::addEdge(const T &sourc, const T &dest, double c, int direction) {
+bool Graph<T>::addEdge(const T &sourc, const T &dest, int c, int d) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == nullptr || v2 == nullptr)
         return false;
-    v1->addEdge(v2, c, direction);
+    v1->addEdge(v2, c, d);
     return true;
 }
 
@@ -442,13 +442,13 @@ bool Graph<T>::removeEdge(const T &sourc, const T &dest) {
 }
 
 template <class T>
-bool Graph<T>::addBidirectionalEdge(const T &sourc, const T &dest, double c, int direction) {
+bool Graph<T>::addBidirectionalEdge(const T &sourc, const T &dest, double c, int d) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == nullptr || v2 == nullptr)
         return false;
-    auto e1 = v1->addEdge(v2, c, direction);
-    auto e2 = v2->addEdge(v1, c, direction);
+    auto e1 = v1->addEdge(v2, c, d);
+    auto e2 = v2->addEdge(v1, c, d);
     e1->setReverse(e2);
     e2->setReverse(e1);
     return true;
