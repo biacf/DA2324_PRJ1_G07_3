@@ -44,6 +44,7 @@ int main() {
                 break;
             }
             case 'd':{
+                waterNetwork.removePumpingStations(mflow);
                 break;
             }
             case 'e':{
