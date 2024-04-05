@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 /home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/Doxygen.dir
 /home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/DA2324_PRJ1_G07_3.dir
 /home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/joaocordeiro77/da/da2324_prj1_g07/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+<<<<<<< HEAD
+=======
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/Doxygen.dir
+>>>>>>> Bia
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/DA2324_PRJ1_G07_3.dir
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/AnaBeatrizCarneiroFe/Desktop/uni/2 ano/DA/DA2324_PRJ1_G07_3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+>>>>>>> 24f0e91ccfa9c4f853b915348d90514089f48a77

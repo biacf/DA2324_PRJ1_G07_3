@@ -162,8 +162,8 @@ const Graph<Node>* DataReader::getPipesGraph() const {
 
 
 void DataReader::loadData() {
-    loadReservoirs("../Project1LargeDataSet/Reservoir.csv");
-    loadStations("../Project1LargeDataSet/Stations.csv");
-    loadCities("../Project1LargeDataSet/Cities.csv");
-    loadPipes("../Project1LargeDataSet/Pipes.csv");
+    loadReservoirs("../Project1DataSetSmall/Reservoirs_Madeira.csv");
+    loadStations("../Project1DataSetSmall/Stations_Madeira.csv");
+    loadCities("../Project1DataSetSmall/Cities_Madeira.csv");
+    loadPipes("../Project1DataSetSmall/Pipes_Madeira.csv");
 }
