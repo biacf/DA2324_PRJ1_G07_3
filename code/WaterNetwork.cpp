@@ -1,3 +1,4 @@
+#include <map>
 #include "WaterNetwork.h"
 
 WaterNetwork::WaterNetwork() {
@@ -174,5 +175,43 @@ unordered_map<string, int> WaterNetwork::edmondsKarpMaxFlow(Graph<Node>& graph, 
         }
     }
     return maxFlow;
+}
+
+void WaterNetwork::removePumpingStations(unordered_map<string, int> mflow) {
+    unordered_map<string, Station> stations = *dataReader.getStationsMap();
+    unordered_map<string, int> current_flow;
+    std::vector<string> useless_stations;
+    int counter = 0;
+
+    Node sel_station;
+    sel_station.type = station;
+    for(const auto& st : stations){
+        std::map<string, int> deficit;
+        Graph<Node> copy = *dataReader.getPipesGraph();
+        sel_station.code = st.first;
+        copy.removeVertex(sel_station);
+        current_flow = calculateMaxFlow(); //this will be updated
+        for(const auto& city : current_flow){
+            if(city.second < mflow.find(city.first)->second){
+                deficit.insert({city.first, mflow.find(city.first)->second - city.second});
+            }
+
+            std::cout << "Affected cities if Pumping Station " << st.first << " is removed: " << std::endl;
+            if(deficit.empty()){
+                std::cout << "No affected cities!" << std::endl;
+                useless_stations.push_back(st.first);
+                counter++;
+            }
+            for(const auto& cd : deficit){
+                std::cout << cd.first << " Deficit: " << cd.second << std::endl;
+            }
+        }
+    }
+
+    std::cout << "There are " << counter << " Pumping Stations that can be removed: " << std::endl;
+    for(const auto& st:useless_stations){
+        std::cout << st << std::endl;
+    }
+
 }
 

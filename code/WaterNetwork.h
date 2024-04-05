@@ -11,7 +11,8 @@ class WaterNetwork {
 public:
     WaterNetwork();
 
-    void  removeWaterReservoir(unordered_map<string, int> mflow);
+    void removeWaterReservoir(unordered_map<string, int> mflow);
+    void removePumpingStations(unordered_map<string, int> mflow);
     DataReader* getDataReader(){return &dataReader;};
 
     unordered_map<string, int> calculateMaxFlow();
