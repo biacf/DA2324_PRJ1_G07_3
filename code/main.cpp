@@ -3,17 +3,17 @@
 
 
 
-int main() {
-
-    char option;
+int main(){
     WaterNetwork waterNetwork;
+    waterNetwork.dataReader.loadData();
+    waterNetwork.use_maxFlow();
     unordered_map<string, int> mflow;
-
+    char option;
     std::cout << "##################################################" << std::endl;
     std::cout << "Welcome to the L.EIC Water Supply Management Tool!" << std::endl;
     std::cout << "##################################################" << std::endl;
 
-//    mflow = waterNetwork.calculateMaxFlow();
+    mflow = waterNetwork.calculateMaxFlow();
 
     while(true){
         std::cout << "\nWhat would you like to simulate today?" << std::endl;
