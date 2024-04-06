@@ -7,22 +7,28 @@
 #include "DataReader.h"
 
 
-
+/// \class WaterNetwork
+/// \brief Class used to perform various operations in order to analyze a water network
 class WaterNetwork {
 public:
+    /// \brief Default constructor for WaterNetwork.
     WaterNetwork();
 
-    void  removeWaterReservoir(const unordered_map<string, int>& mflow);
-    void use_maxFlow();
-    unordered_map<string, int> calculateMaxFlow(const Graph<Node>& pipesGraph);
-    int bfsMaxFlow(const Graph<Node>& graph, Vertex<Node>* source, Vertex<Node>* sink, unordered_map<string, int>& maxFlow);
-    unordered_map<string, int> edmondsKarpMaxFlow(const Graph<Node>& graph, const vector<Node>& sources, const vector<Node>& sinks, const unordered_map<string, Station>& stationsMap);
-    void removePumpingStations(unordered_map<string, int> mflow);
+    void  removeWaterReservoir(vector<Node> reservoirs, vector<Node> cities, const unordered_map<string, int>& mflow);
+    unordered_map<string, int> edmondsKarpMaxFlow(vector<Node> reservoirs, vector<Node> cities, Graph<Node> pipes);
+    void removePumpingStations(vector<Node> reservoirs, vector<Node> cities, const unordered_map<string, int>& mflow);
+    void removePipeline(vector<Node> reservoirs, vector<Node> cities, const unordered_map<string, int>& mflow);
     void vitalPipelines();
     void minCut(const string& c_code);
     void minCutBFS(std::unordered_set<string>& visited, const string& source);
     DataReader dataReader;
 private:
+
+    int BFSMaxFlow(Vertex<Node>* source, Vertex<Node>* sink);
+    /// \brief Resets the flow of all edges in the graph to zero.
+    /// \param graph The graph to reset.
+    void resetFlow(Graph<Node> * graph);
+    /// \brief Initializes the water network by loading data.
     void initializeData();
 
 };

@@ -1,5 +1,4 @@
 #include <map>
-#include <unordered_set>
 #include "WaterNetwork.h"
 
 WaterNetwork::WaterNetwork() {
@@ -10,229 +9,403 @@ void WaterNetwork::initializeData(){
     dataReader.loadData();
 }
 
-
-void WaterNetwork::removeWaterReservoir(const unordered_map<string, int>& mflow) {
-    std::string wr_code;
-    Graph<Node> copy = *dataReader.getPipesGraph();
-    std::vector<std::string> removed_reservoirs;
-    bool breaking = true;
-
-    while (breaking) {
-        bool found = false;
-        while (true) {
-            std::cout << "Select Water Reservoir: ";
-            std::cin >> wr_code;
-            std::cout << std::endl;
-
-            for (const auto &w: removed_reservoirs) {
-                if (w == wr_code) {
-                    std::cout << "Reservoir already removed!" << std::endl;
-                    found = true;
-                }
-            }
-
-            if (!found) {
-                if (dataReader.getReservoirsMap()->find(wr_code) == dataReader.getReservoirsMap()->end()) {
-                    std::cout << "Invalid Water Reservoir code" << std::endl;
-                    found = true;
-                } else {
-                    Node node;
-                    node.code = wr_code;
-                    node.type = reservoir;
-                    std::cout << "We out here!" << std::endl;
-                    if (copy.removeVertex(node)) {
-                        removed_reservoirs.push_back(wr_code);
-                        std::cout << "Node was pushed back!" << std::endl;
-                    }
-                }
-            }
-            break;
+/// \brief Computes the maximum flow for cities from reservoirs using the Edmonds-Karp algorithm.
+/// \param reservoirs A vector of reservoir nodes.
+/// \param cities A vector of city nodes.
+/// \param pipes The graph representing the water network.
+/// \return An unordered map containing the maximum flow for each city.
+/// \note Time Complexity: O(R * C * E), where R is the number of reservoirs, C is the number of cities, and E is the number of edges.
+unordered_map<string, int> WaterNetwork::edmondsKarpMaxFlow(vector<Node> reservoirs, vector<Node> cities, Graph<Node> pipes) {
+    resetFlow(&pipes);
+    unordered_map<string,int> cities_max_flow;
+    for(const auto& city : cities){
+        Vertex<Node>* sink = pipes.findVertex(city);
+        if(sink == nullptr){
+            std::cout << "Error retrieving city node" << std::endl;
+            return cities_max_flow;
         }
-        if (!found) {
-            int demand;
-            std::vector<string> aff_cities;
-            unordered_map<string, int> updated = calculateMaxFlow(copy); //mudar quando novo maxflow
+        int totalMaxFlow = 0;
 
-            for (const auto &c: updated) {
-                demand = dataReader.getCitiesMap()->find(c.first)->second.demand;
-                if (c.second < demand) {
-                    aff_cities.push_back(dataReader.getCitiesMap()->find(c.first)->second.name);
-                }
+        for(const Node& res : reservoirs){
+            Vertex<Node>* source = pipes.findVertex(res);
+            if(source == nullptr){
+                std::cout << "Error retrieving reservoir node" << std::endl;
+                continue;
             }
-
-            if (aff_cities.empty()) {
-                std::cout << "No cities were affected by the removal of " << wr_code << std::endl;
-            } else {
-                std::cout << "Affected cities: " << std::endl;
-                for (const auto& c: aff_cities) {
-                    std::cout << c << std::endl;
-                }
-            }
+            int maxFlow = BFSMaxFlow(source, sink);
+            totalMaxFlow += maxFlow;
         }
-        int option;
-        std::cout << "Do you want to remove more reservoirs?(0/1) ";
-        std::cin >> option;
-        if (!option) {
-            breaking = false;
-        }
-
+        int actualFlow = min(totalMaxFlow, dataReader.getCitiesMap()->find(city.code)->second.demand);
+        cities_max_flow.insert({city.code, actualFlow});
     }
+
+    return cities_max_flow;
 }
 
-void WaterNetwork::use_maxFlow(){
-    auto g = dataReader.getPipesGraph();
-    auto maxFlow = calculateMaxFlow((*g));
-    for(const auto& c: maxFlow){
-        cout << c.first << " " << c.second << endl;
-    }
-}
+/// \brief Computes the maximum flow from a source to a sink using BFS in the residual graph.
+/// \param source The source vertex.
+/// \param sink The sink vertex.
+/// \return The maximum flow from source to sink.
+/// \note Time Complexity: O(E * V^2), where E is the number of edges and V is the number of vertices.
+int WaterNetwork::BFSMaxFlow(Vertex<Node> *source, Vertex<Node> *sink) {
+    int maxFlow = 0;
+    unordered_map<Vertex<Node>*, Edge<Node>*> parent;
 
-
-unordered_map<string, int> WaterNetwork::calculateMaxFlow(const Graph<Node>& pipesGraph) {
-    unordered_map<string, int> maxFlows;
-
-
-    // Retrieve reservoirs, cities, and stations maps
-    const unordered_map<string, Reservoir>* reservoirsMap = dataReader.getReservoirsMap();
-    const unordered_map<string, City>* citiesMap = dataReader.getCitiesMap();
-    const unordered_map<string, Station>* stationsMap = dataReader.getStationsMap();
-
-    // Convert sources and sinks to vectors
-    vector<Node> sources;
-    vector<Node> sinks;
-    for (const auto& reservoirEntry : *reservoirsMap) {
-        sources.push_back(Node{node_type::reservoir, reservoirEntry.second.code});
-    }
-    for (const auto& cityEntry : *citiesMap) {
-        sinks.push_back(Node{node_type::city, cityEntry.second.code});
-    }
-
-    // Calculate max flow using Edmonds-Karp algorithm
-    unordered_map<string, int> maxFlow = edmondsKarpMaxFlow(pipesGraph, sources, sinks, *stationsMap);
-
-    return maxFlow;
-}
-
-int WaterNetwork::bfsMaxFlow(const Graph<Node>& graph, Vertex<Node>* source, Vertex<Node>* sink, unordered_map<string, int>& maxFlow) {
-    std::unordered_map<Vertex<Node>*, double> flow; // Stores flow through each vertex
-    std::unordered_map<Vertex<Node>*, Edge<Node>*> parent; // Stores parent edge for each vertex
-    const unordered_map<string, City>* citiesMap = dataReader.getCitiesMap();
-
-    // Initialize flow and parent maps
-    for (auto v : graph.getVertexSet()) {
-        flow[v] = 0;
-        parent[v] = nullptr;
-    }
-
-    std::queue<Vertex<Node>*> q;
+    queue<Vertex<Node>*> q;
     q.push(source);
-    flow[source] = std::numeric_limits<double>::infinity();
+
+    unordered_set<Vertex<Node>*> visited;
+    visited.insert(source);
 
     while (!q.empty()) {
-        auto u = q.front();
+        Vertex<Node>* u = q.front();
         q.pop();
-        for (auto e : u->getAdj()) {
-            auto v = e->getDest();
-            if (e->getCapacity() > 0) { // Consider all edges with positive capacity
-                auto remainingCapacity = e->getCapacity() - e->getFlow(); // Remaining capacity of the edge
-                auto minFlow = std::min(remainingCapacity, flow[u]);
-                auto cityCode = v->getInfo().code; // City code
-                auto demand = citiesMap->at(cityCode).demand; // Demand of the city
-                minFlow = std::min(minFlow, static_cast<double>(demand)); // Adjust minFlow based on city demand
-                if (minFlow > 0 && (flow[v] == 0 || minFlow < flow[v])) {
-                    parent[v] = e;
-                    flow[v] = minFlow;
-                    q.push(v);
-                    if (v == sink) {
-                        // Found augmenting path
-                        auto pathFlow = flow[sink];
-                        auto curr = sink;
-                        while (parent[curr] != nullptr) {
-                            auto edge = parent[curr];
-                            edge->setFlow(edge->getFlow() + pathFlow);
-                            auto reverseEdge = edge->getReverse();
-                            if (reverseEdge) { // Check if reverseEdge is not null
-                                reverseEdge->setFlow(reverseEdge->getFlow() - pathFlow);
-                            }
-                            curr = edge->getOrig();
-                        }
-                        return pathFlow;
+
+        for (Edge<Node>* edge : u->getAdj()) {
+            Vertex<Node>* v = edge->getDest();
+            if (visited.count(v) == 0 && (edge->getCapacity() - edge->getFlow() )> 0) {
+                visited.insert(v);
+                parent[v] = edge;
+                q.push(v);
+                if (v == sink) {
+                    Vertex<Node>* current = sink;
+                    int minCapacity = INT_MAX;
+
+                    while (current != source) {
+                        Edge<Node>* parentEdge = parent[current];
+                        minCapacity = min(minCapacity, (int) (parentEdge->getCapacity() - parentEdge->getFlow()));
+                        current = parentEdge->getOrig();
                     }
+
+                    current = sink;
+                    while (current != source) {
+                        Edge<Node>* parentEdge = parent[current];
+                        parentEdge->setFlow(parentEdge->getFlow() + minCapacity);
+                        if(parentEdge->getReverse() != nullptr){
+                            parentEdge->getReverse()->setFlow(parentEdge->getReverse()->getFlow() - minCapacity);
+                        }
+                        current = parentEdge->getOrig();
+                    }
+
+                    maxFlow += minCapacity;
+                    parent.clear();
+                    break;
                 }
             }
         }
     }
-    return 0;
-}
 
-unordered_map<string, int> WaterNetwork::edmondsKarpMaxFlow(const Graph<Node>& graph, const vector<Node>& sources, const vector<Node>& sinks, const unordered_map<string, Station>& stationsMap) {
-    unordered_map<string, int> maxFlow; // Map to store max flow for each city
-
-    for (const auto& city : sinks) {
-        maxFlow[city.code] = 0;
-    }
-
-    for (const auto& source : sources) {
-        for (const auto& sink : sinks) {
-            Vertex<Node>* sourceVertex = graph.findVertex(source);
-            Vertex<Node>* sinkVertex = graph.findVertex(sink);
-            int flow = bfsMaxFlow(graph, sourceVertex, sinkVertex, maxFlow);
-            maxFlow[sink.code] += flow;
-        }
-    }
     return maxFlow;
 }
 
-
-void WaterNetwork::removePumpingStations(unordered_map<string, int> mflow) {
-    unordered_map<string, Station> stations = *dataReader.getStationsMap();
-    unordered_map<string, int> current_flow;
-    std::vector<string> useless_stations;
-    int counter = 0;
-
-    Node sel_station;
-    sel_station.type = station;
-    for(const auto& st : stations){
-        std::map<string, int> deficit;
-        Graph<Node> copy = *dataReader.getPipesGraph();
-        sel_station.code = st.first;
-        copy.removeVertex(sel_station);
-        current_flow = calculateMaxFlow(copy); //this will be updated
-        for(const auto& city : current_flow){
-            if(city.second < mflow.find(city.first)->second){
-                deficit.insert({city.first, mflow.find(city.first)->second - city.second});
-            }
-
-            std::cout << "Affected cities if Pumping Station " << st.first << " is removed: " << std::endl;
-            if(deficit.empty()){
-                std::cout << "No affected cities!" << std::endl;
-                useless_stations.push_back(st.first);
-                counter++;
-            }
-            for(const auto& cd : deficit){
-                std::cout << cd.first << " Deficit: " << cd.second << std::endl;
-            }
+void WaterNetwork::resetFlow(Graph<Node> *graph) {
+    for(auto v: graph->getVertexSet()){
+        for(auto e : v->getAdj()){
+            e->setFlow(0);
         }
     }
+}
 
-    std::cout << "There are " << counter << " Pumping Stations that can be removed: " << std::endl;
-    for(const auto& st:useless_stations){
-        std::cout << st << std::endl;
+/// \brief Removes a water reservoir from the network and evaluates its impact on city flows.
+///
+/// \param reservoirs Vector of remaining reservoir nodes in the network.
+/// \param cities Vector of city nodes in the network.
+/// \param mflow Mapping of city codes to their respective flow demands.
+///
+/// \return Updated city flow capacities after reservoir removal.
+///
+/// \note Time Complexity: O(R * (V + E)), where R is the number of reservoirs, V is the number of nodes (cities, stations), and E is the number of edges (pipes).
+void WaterNetwork::removeWaterReservoir(vector<Node> reservoirs, vector<Node> cities, const unordered_map<string, int>& mflow) {
+    Graph<Node> copy = dataReader.getPipesGraph();
+
+    while (true) {
+        std::string wr_code;
+        std::cout << "Select Water Reservoir to Remove (or enter 'done' to finish): ";
+        std::cin >> wr_code;
+        std::cout << std::endl;
+
+        if (wr_code == "done") {
+            break;
+        }
+
+        auto it = std::find_if(reservoirs.begin(), reservoirs.end(),[&wr_code](const Node& n) { return n.code == wr_code; });
+
+        if (it != reservoirs.end()) {
+            Node reservoir = *it;
+
+            if (copy.removeVertex(reservoir)) {
+                std::cout << "Removed reservoir: " << reservoir.code << std::endl;
+
+                reservoirs.erase(it);
+
+                unordered_map<string, int> updated = edmondsKarpMaxFlow(reservoirs, cities, copy);
+
+                vector<string> aff_cities;
+                for (const auto& c : updated) {
+                    if (c.second < mflow.find(c.first)->second) {
+                        aff_cities.push_back(c.first);
+                    }
+                }
+
+                if (aff_cities.empty()) {
+                    std::cout << "No cities were affected by the removal of " << reservoir.code << std::endl;
+                } else {
+                    std::cout << "Affected cities: " << std::endl;
+                    for (const auto& c : aff_cities) {
+                        std::cout << "CITY: " << dataReader.getCitiesMap()->find(c)->second.name <<" | OLD FLOW: " << mflow.find(c)->second << " | NEW FLOW: " << updated.find(c)->second << std::endl;
+                    }
+                }
+            } else {
+                std::cout << "Failed to remove reservoir: " << reservoir.code << std::endl;
+            }
+        } else {
+            std::cout << "Invalid Water Reservoir code" << std::endl;
+        }
     }
+}
+
+/// \brief Removes a pumping station from the network and evaluates its impact on city flows.
+///
+/// \param reservoirs Vector of remaining reservoir nodes in the network.
+/// \param cities Vector of city nodes in the network.
+/// \param mflow Mapping of city codes to their respective flow demands.
+///
+/// \return Updated city flow capacities after station removal.
+///
+/// \note Time Complexity: O(S * (V + E)), where S is the number of pumping stations, V is the number of nodes (cities, reservoirs), and E is the number of edges (pipes).
+void WaterNetwork::removePumpingStations(vector<Node> reservoirs, vector<Node> cities, const unordered_map<string, int>& mflow) {
+    unordered_map<string, Station> stations = *dataReader.getStationsMap();
+    unordered_map<string, int> currentFlow;
+
+
+
+    std::string stationCode;
+    std::cout << "Select Pumping Station to Remove: ";
+    std::cin >> stationCode;
+    std::cout << std::endl;
+
+    auto it = stations.find(stationCode);
+    if (it != stations.end()) {
+        Station station_ = it->second;
+
+        Node stationNode;
+        stationNode.type = station;
+        stationNode.code = stationCode;
+
+        Graph<Node> copy = dataReader.getPipesGraph();
+        if (copy.removeVertex(stationNode)) {
+            std::cout << "Removed pumping station: " << stationCode << std::endl;
+
+            stations.erase(it);
+
+            currentFlow = edmondsKarpMaxFlow(reservoirs, cities, copy);
+
+
+            std::cout << "Affected cities if Pumping Station " << stationCode << " is removed: " << std::endl;
+            bool allCitiesUnaffected = true;
+            for (const auto& cityFlow : currentFlow) {
+                const string& cityName = cityFlow.first;
+                int flow = cityFlow.second;
+                int demand = mflow.at(cityName);
+
+                if (flow < demand) {
+                    std::cout << "CITY: " << dataReader.getCitiesMap()->find(cityName)->second.name << " | CODE: " << cityName << " | OLD FLOW: " << demand << " | NEW FLOW: " << flow << std::endl;
+                    allCitiesUnaffected = false;
+                }
+            }
+
+            if (allCitiesUnaffected) {
+                std::cout << "No affected cities!" << std::endl;
+            }
+            } else {
+            std::cout << "Failed to remove pumping station: " << stationCode << std::endl;
+            }
+        } else {
+            std::cout << "Invalid Pumping Station code" << std::endl;
+        }
 
 }
 
+/// \brief Removes a pipeline between specified nodes and evaluates its impact on city flows.
+///
+/// \param reservoirs Vector of remaining reservoir nodes in the network.
+/// \param cities Vector of city nodes in the network.
+/// \param mflow Mapping of city codes to their respective flow demands.
+///
+/// \return Updated city flow capacities after pipeline removal.
+///
+/// \note Time Complexity: O(V + E), where V is the number of nodes (cities, reservoirs, stations) and E is the number of edges (pipes).
+void WaterNetwork::removePipeline(vector<Node> reservoirs, vector<Node> cities, const unordered_map<string, int> &mflow) {
+    std::string source_code;
+    std::string dest_code;
+    int option;
+    Node source;
+    Node destination;
 
+    std::cout << "Source is: " << std::endl;
+    std::cout << "1. Water Reservoir" << std::endl;
+    std::cout << "2. Pumping Station" << std::endl;
+    std::cout << "3. City" << std::endl;
+    std::cout << "Option: ";
+    std::cin >> option;
+    while(true){
+        if(option < 1 || option > 3){
+            std::cout << "Valid Option: ";
+            std::cin >> option;
+        }
+        else{
+            break;
+        }
+    }
+    std::cout << "Source code: ";
+    std::cin >> source_code;
+    while(true) {
+        bool found = false;
+        if (option == 1) {
+            if (dataReader.getReservoirsMap()->find(source_code) == dataReader.getReservoirsMap()->end()) {
+                found = false;
+            }
+            else{
+                found = true;
+                source.type = reservoir;
+            }
+        }
+        else if(option == 2){
+            if (dataReader.getStationsMap()->find(source_code) == dataReader.getStationsMap()->end()) {
+                found = false;
+            }
+            else{
+                found = true;
+                source.type = station;
+            }
+        }
+        else if(option == 3){
+            if (dataReader.getCitiesMap()->find(source_code) == dataReader.getCitiesMap()->end()) {
+                found = false;
+            }
+            else{
+                found = true;
+                source.type = city;
+            }
+        }
+        else{
+            return;
+        }
+
+        if(found){
+            source.code = source_code;
+            break;
+        }
+        else{
+            std::cout << "Valid source code: ";
+            std::cin >> source_code;
+        }
+    }
+
+
+    std::cout << "Destination is: " << std::endl;
+    std::cout << "1. Water Reservoir" << std::endl;
+    std::cout << "2. Pumping Station" << std::endl;
+    std::cout << "3. City" << std::endl;
+    std::cout << "Option: ";
+    std::cin >> option;
+    while(true){
+        if(option < 1 || option > 3){
+            std::cout << "Valid Option: ";
+            std::cin >> option;
+        }
+        else{break;}
+    }
+    std::cout << "Destination code: ";
+    std::cin >> dest_code;
+    while(true) {
+        bool found = false;
+        if (option == 1) {
+            if (dataReader.getReservoirsMap()->find(dest_code) == dataReader.getReservoirsMap()->end()) {
+                found = false;
+            }
+            else{
+                found = true;
+                destination.type = reservoir;
+            }
+        }
+        else if(option == 2){
+            if (dataReader.getStationsMap()->find(dest_code) == dataReader.getStationsMap()->end()) {
+                found = false;
+            }
+            else{
+                found = true;
+                destination.type = station;
+            }
+        }
+        else if(option == 3){
+            if (dataReader.getCitiesMap()->find(dest_code) == dataReader.getCitiesMap()->end()) {
+                found = false;
+            }
+            else{
+                found = true;
+                destination.type = city;
+            }
+        }
+        else{
+            return;
+        }
+
+        if(found){
+            destination.code = dest_code;
+            break;
+        }
+        else{
+            std::cout << "Valid destination code: ";
+            std::cin >> dest_code;
+        }
+    }
+
+    bool found = false;
+    Graph<Node> copy = dataReader.getPipesGraph();
+
+    if(copy.findVertex(source) == nullptr){
+        std::cout << "Invalid Source" << std::endl;
+        return;
+    }
+    else{
+        if(copy.findVertex(destination)== nullptr){
+            std::cout << "Invalid destination" << std::endl;
+            return;
+        }
+
+        for(auto e : copy.findVertex(source)->getAdj()){
+            if(e->getDest()->getInfo() == destination){
+                found = true;
+            }
+        }
+
+        if(found){
+            copy.removeEdge(source, destination);
+            std::unordered_map<string, int> updated = edmondsKarpMaxFlow(reservoirs, cities, copy);
+            std::cout << "Affected cities: " << std:: endl;
+            for(auto a : updated){
+                if(a.second < mflow.find(a.first)->second){
+                    std::cout << "CITY: " << dataReader.getCitiesMap()->find(a.first)->second.name << "| CODE: " << a.first << " | OLD FLOW: " << mflow.find(a.first)->second << " | NEW FLOW: " << a.second << std::endl;
+                }
+            }
+        }
+        else{
+            std::cout << "Edge doesn't exist";
+        }
+    }
+}
+
+///\brief Prompts the user for the desired city to analyze
 void WaterNetwork::vitalPipelines() {
     string city_code;
 
-    while(true){
+    while (true) {
         std::cout << "Insert valid city code: ";
         std::cin >> city_code;
-        if(dataReader.getCitiesMap()->find(city_code) == dataReader.getCitiesMap()->end()){
+        if (dataReader.getCitiesMap()->find(city_code) == dataReader.getCitiesMap()->end()) {
             std::cout << "Invalid city code!" << std::endl;
-        }
-        else{
+        } else {
             break;
         }
     }
@@ -240,50 +413,70 @@ void WaterNetwork::vitalPipelines() {
     minCut(city_code);
 }
 
-void WaterNetwork::minCutBFS(unordered_set<string> &visited, const string& source) {
+/// \brief Performs a Breadth-First Search (BFS) to find all reachable nodes from a given source city.
+/// \param visited Reference to an unordered_set containing visited city codes.
+/// @param source The starting city code for the BFS traversal.
+/// \note Time Complexity: O(V + E), where V is the number of vertices (cities) and E is the number of edges (pipes).
+void WaterNetwork::minCutBFS(unordered_set<string>& visited, const string& source) {
     queue<string> q;
     q.push(source);
     visited.insert(source);
-    Node city_;
-    city_.type= city;
 
-    while(!q.empty()){
+    while (!q.empty()) {
         string current = q.front();
         q.pop();
-        city_.code = current;
-        for(auto e : dataReader.getPipesGraph()->findVertex(city_)->getAdj()){
-            if(e->getCapacity() - e->getFlow() > 0 && visited.find(e->getDest()->getInfo().code) == visited.end()){
-                q.push(e->getDest()->getInfo().code);
-                visited.insert(e->getDest()->getInfo().code);
+
+        // Find the vertex corresponding to the current city code
+        Node cityNode;
+        cityNode.type = city;
+        cityNode.code = current;
+        Vertex<Node>* currentVertex = dataReader.getPipesGraph().findVertex(cityNode);
+
+        if (currentVertex) {
+            // Traverse adjacent edges
+            for (Edge<Node>* edge : currentVertex->getAdj()) {
+                if (edge && (edge->getCapacity() - edge->getFlow() > 0) && visited.find(edge->getDest()->getInfo().code) == visited.end()) {
+                    q.push(edge->getDest()->getInfo().code);
+                    visited.insert(edge->getDest()->getInfo().code);
+                }
             }
         }
     }
 }
 
+/// \brief Computes the minimum cut in the network for a specified city.
+/// \param c_code The city code for which the minimum cut is calculated.
+/// This function identifies all pipes (edges) that, if cut, would disconnect the specified city from the source.
+/// \note Time Complexity: O(V + E), where V is the number of vertices (cities) and E is the number of edges (pipes).
 void WaterNetwork::minCut(const string& c_code) {
     std::unordered_set<string> visited;
     minCutBFS(visited, c_code);
 
-    Node sourcecity;
-    sourcecity.type = city;
-    sourcecity.code = c_code;
+    // Find the source city vertex
+    Node sourceCityNode;
+    sourceCityNode.type = city;
+    sourceCityNode.code = c_code;
+    Vertex<Node>* sourceVertex = dataReader.getPipesGraph().findVertex(sourceCityNode);
+
+    if (!sourceVertex) {
+        std::cout << "Error: Source city vertex not found." << std::endl;
+        return;
+    }
 
     vector<Edge<Node>*> minCutEdges;
-    for(int i = 0; i < dataReader.getPipesGraph()->findVertex(sourcecity)->getAdj().size(); i++){
-        Edge<Node>* edge = dataReader.getPipesGraph()->findVertex(sourcecity)->getAdj()[i];
-        if(visited.find(edge->getDest()->getInfo().code) != visited.end()){
+    // Iterate over the adjacency list of the source city vertex
+    for (Edge<Node>* edge : sourceVertex->getAdj()) {
+        if (edge && visited.find(edge->getDest()->getInfo().code) != visited.end()) {
             minCutEdges.push_back(edge);
         }
     }
 
-    if(minCutEdges.empty()){
+    if (minCutEdges.empty()) {
         std::cout << "No pipes would negatively affect " << dataReader.getCitiesMap()->find(c_code)->second.name << " flow if cut." << std::endl;
-    }
-    else{
-        std::cout << "The following pipes would negatively affect this cities flow if cut: " << std::endl;
-        for(auto e : minCutEdges){
-            std::cout << "Pipe that connects " << e->getOrig()->getInfo().code << " to " << e->getDest()->getInfo().code << std::endl;
+    } else {
+        std::cout << "The following pipes would negatively affect this city's flow if cut: " << std::endl;
+        for (Edge<Node>* edge : minCutEdges) {
+            std::cout << "Pipe that connects " << edge->getOrig()->getInfo().code << " to " << edge->getDest()->getInfo().code << std::endl;
         }
     }
 }
-

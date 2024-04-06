@@ -1,6 +1,3 @@
-// Original code by Gonçalo Leão
-// Updated by DA 2023/2024 Team
-
 #ifndef DA_TP_CLASSES_GRAPH
 #define DA_TP_CLASSES_GRAPH
 
@@ -90,7 +87,7 @@ protected:
     Vertex<T> *orig;
     Edge<T> *reverse = nullptr;
 
-    double flow; // for flow-related problems
+    double flow = 0; // for flow-related problems
 };
 
 /********************** Graph  ****************************/
